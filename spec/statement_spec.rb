@@ -6,9 +6,14 @@ describe Account do
     @account = Account.new
   end
 
-  it 'prints a statement when there is a single transaction on record' do
+  it 'prints a statement when there is a single 3 digit credit on record' do
     @account.deposit(500)
-    expect(@account.statement.prints).to eq("date      || credit    || debit    || balance\n'25-12-16'|| 500.00    ||          || 500.00")
+    expect(@account.prints).to eq("date       || credit    || debit     || balance\n25-12-2016 || 500.00    ||           || 500.00\n")
+  end
+
+  it 'prints a statement when there is a single 4 digit credit on record' do
+    @account.deposit(5000)
+    expect(@account.prints).to eq("date       || credit    || debit     || balance\n25-12-2016 || 5000.00   ||           || 5000.00\n")
   end
 
 end

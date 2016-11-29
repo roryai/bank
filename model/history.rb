@@ -6,8 +6,8 @@ attr_accessor :transactions
     @transactions = []
   end
 
-  def record(amount, date = "25-12-2016")
-    @transactions << {amount: amount, date: date}
+  def record(amount, date = "25-12-2016", type)
+    @transactions << {amount: amount, date: date, type: type}
   end
 
 

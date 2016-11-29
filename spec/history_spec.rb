@@ -13,6 +13,7 @@ describe History do
 
     it 'records the default date for each transaction' do
       @account.deposit(800)
+      p @account.history.transactions
       expect(@account.history.transactions[0][:date]).to eq("25-12-2016")
     end
 
