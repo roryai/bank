@@ -8,10 +8,7 @@ describe Account do
 
   it 'prints a statement when there is a single transaction on record' do
     @account.deposit(500)
-    expect(@account.statement.print).to eq("
-      date      || credit    || debit    || balance
-      '25-12-16'|| 500.00    ||          || 500.00
-    ")
+    expect(@account.statement.prints).to eq("date      || credit    || debit    || balance\n'25-12-16'|| 500.00    ||          || 500.00")
   end
 
 end
