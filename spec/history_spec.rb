@@ -1,22 +1,29 @@
 require_relative '../model/account'
 
-describe Account do
+describe History do
 
   before (:each) do
     @account = Account.new
   end
-
-  context 'History' do
 
     it 'records the amount of each transaction' do
       @account.deposit(300)
       expect(@account.history.transactions[0][:amount]).to eq(300)
     end
 
-    it 'records the date of each transaction' do
+    it 'records the default date for each transaction' do
       @account.deposit(800)
       expect(@account.history.transactions[0][:date]).to eq("25-12-2016")
     end
 
-  end
+    it 'records a specific date for a transaction' do
+      @account.deposit(800, "01-01-2017")
+      expect(@account.history.transactions[0][:date]).to eq("01-01-2017")
+    end
+
+    xit 'calculates the change in balance between transactions' do
+      @account.deposit(800)
+      expect().to
+    end
+
 end

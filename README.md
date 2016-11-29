@@ -24,4 +24,4 @@ I want to be able to calculate the change in balance from date to date
 
 As a user
 So that I can see the state of my finances
-I want to be able to see a statement of account
+I want to be able to see a statement of account on screen displaying transaction history
